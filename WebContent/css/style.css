@@ -1,0 +1,179 @@
+body  {
+    background: white;
+    color: #363636;
+}
+a
+{
+    text-decoration:none;
+    color:#2d6ca2;
+}
+
+a:hover
+{
+    color:#5f5f5f;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input, input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+/*Header*/
+.header
+{
+    min-height:20px !important;
+    width:100%;
+    margin:auto;
+}
+
+.loginSection
+{
+    float:right;
+    margin-top:-50px;
+    margin-bottom:-5px;
+    margin-right:15px;
+}
+
+/*Navbar*/
+.navbar
+{
+    width:100%;
+    margin:auto;
+    background-color: #CCCCCC;
+    min-height:20px !important;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    color:#000;
+    text-decoration:none;
+    display: block;
+    padding: 8px;
+    background-color: #CCCCCC;
+}
+
+.navbar li a.active {
+    color:#fff !important;
+    background-color: #2d6ca2;
+}
+
+.navbar li a:hover {
+    background-color: #5f5f5f;
+    color:#fff;
+}
+
+/*Footer*/
+.footer
+{
+    padding: 10px;
+/*    background-color: #efefef;*/
+    text-align: center;
+}
+
+/* Login form */
+.container {
+	margin-top: 50px;
+}
+
+.main{
+ 	margin-top: 70px;
+}
+
+.form {
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+}
+
+.pageTitle
+{
+    text-align:center;
+    margin:auto;
+    color:#2d6ca2;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 450px;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    padding:0px;
+}
+
+.modal-backdrop {
+    background: gray;
+    opacity: 0.5;
+    filter: blur(15px);
+    -webkit-filter: blur(15px) grayscale(50%);
+}
+
+.modal-header {
+    padding: 10px 16px;
+    color: white;
+    border-style: hidden !important;
+}
+
+.modal-body {
+	padding: 10px 60px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/*Manage Inventory Page*/
+.search-form {
+
+}
+
+.search-form input {
+}
+
+.resources {
+}
+
