@@ -1,4 +1,4 @@
-<script src="js/settingsValidarion.js"></script>
+
 
 <%@include file="includes/navbar.jsp" %>
 
