@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-offset-2">
             <form method="post">
-			  <div class="form-group" onsubmit="checkForm();">
+			  <div class="form-group" onsubmit="checkForm();" method="post">
 				<label for="pwd">Enter current password: </label>
 				<input type="password" class="form-control" id="ogpwd">
 			  </div>
