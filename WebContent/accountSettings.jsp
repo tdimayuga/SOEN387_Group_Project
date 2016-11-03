@@ -1,3 +1,5 @@
+<script src="js/settingsValidarion.js"></script>
+
 <%@include file="includes/navbar.jsp" %>
 
 <div class="container" style="width:400px !important;">
@@ -6,7 +8,7 @@
     <div class="row">
         <div class="col-md-offset-2">
             <form method="post">
-			  <div class="form-group">
+			  <div class="form-group" onsubmit="checkForm();">
 				<label for="pwd">Enter current password: </label>
 				<input type="password" class="form-control" id="ogpwd">
 			  </div>
