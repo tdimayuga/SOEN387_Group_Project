@@ -21,29 +21,29 @@
                 </ul>
             </div>
 
-            <div id="forms" style="display: none">
-                <div id="computerform" style="display: none">
-                    <jsp:include page="computerform.html"></jsp:include>
-                </div>
-                <div id="boardform" style="display: none">
-                    <jsp:include page="boardform.html"></jsp:include>
-                </div>
-                <div id="roomform" style="display: none">
-                    <jsp:include page="roomform.html"></jsp:include>
-                </div>
-                <div id="projectorform" style="display: none">
-                    <jsp:include page="projectorform.html"></jsp:include>
-                </div>
+            <div id="computerform" style="display: none">
+                <jsp:include page="computerform.html"></jsp:include>
+            </div>
+            <div id="boardform" style="display: none">
+                <jsp:include page="boardform.html"></jsp:include>
+            </div>
+            <div id="roomform" style="display: none">
+                <jsp:include page="roomform.html"></jsp:include>
+            </div>
+            <div id="projectorform" style="display: none">
+                <jsp:include page="projectorform.html"></jsp:include>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    $('#resource li a').click(function(){
-        $("[style]").hide();
-        $("#forms").show();
-        $("#"+(this).id+"form").show();
+    $(document).ready(function() {
+        $('#resource li').click(function(){
+            var form = $(this).attr("id") + "form";
+            $("[style]").hide();
+            $("#" + form).show();
+        });
     });
 </script>
 
