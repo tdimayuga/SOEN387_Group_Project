@@ -13,7 +13,6 @@
        	<link rel="stylesheet" type="text/css" href="css/style.css">
        	<script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
 		<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js" type="text/javascript"></script>
-		<script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.js" type="text/javascript"></script>
 	</head>
 	
