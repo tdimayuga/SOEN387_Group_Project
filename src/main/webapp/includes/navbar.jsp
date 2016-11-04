@@ -1,4 +1,5 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" language="java" %>
 <%@include file="header.jsp" %>
 
 <div class="header">
@@ -21,7 +22,7 @@
   			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
   		</div>
   		<div class="modal-body">
-          <%@include file="../login.jsp" %>
+          <%@include file="../WEB-INF/views/jsp/inventory/login.jsp" %>
         </div>
     </div>
   </div>

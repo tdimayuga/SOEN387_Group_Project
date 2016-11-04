@@ -4,7 +4,7 @@
 	Date: October 30, 2016 - 1.0
  -->
 
-<%@include file="includes/navbar.jsp" %>
+<%@include file="../../../../includes/navbar.jsp" %>
 
 <div class="container">
     <div class="pageTitle"> <h2>Manage Inventory</h2></div> 
@@ -93,4 +93,4 @@ $('.searchForm').validate({
 });
 </script>
 
-<%@include file="includes/footer.jsp" %>
+<%@include file="../../../../includes/footer.jsp" %>

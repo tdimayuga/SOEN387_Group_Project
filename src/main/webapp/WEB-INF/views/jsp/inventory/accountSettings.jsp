@@ -1,4 +1,4 @@
-<%@include file="includes/navbar.jsp" %>
+<%@include file="../../../../includes/navbar.jsp" %>
 
 <div class="container" style="width:400px !important;">
     <div class="pageTitle"><h2>Account Settings</h2></div> 
@@ -25,4 +25,4 @@
     </div>
 </div>
 
-<%@include file="includes/footer.jsp" %>
+<%@include file="../../../../includes/footer.jsp" %>

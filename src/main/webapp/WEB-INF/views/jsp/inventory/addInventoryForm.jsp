@@ -2,7 +2,7 @@
     addInventoryForm.jsp
     Author: Martin Nafekh 27423993
 --%>
-<%@include file="includes/navbar.jsp" %>
+<%@include file="../../../../includes/navbar.jsp" %>
 <div class="container" style="width:400px !important;">
     <div class="pageTitle"><h2>Add Inventory</h2></div>
     <div class="row">
