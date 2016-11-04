@@ -27,3 +27,36 @@
         </div>
     </div>
 </form>
+
+<script>
+    $('.form-horizontal').validate({
+        rules: {
+            width: {
+                required: true
+            },
+            height: {
+                required: true
+            }
+        },
+        messages: {
+            width: "Please enter a value for width",
+            height: "Please enter a value for height"
+        },
+        highlight: function() {
+            $('.formcontrol').addClass('has-error');
+        },
+        unhighlight: function() {
+            $('.form-control').removeClass('has-error');
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function(error, element) {
+            if(element.parent('.form-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        }
+    });
+
+</script>

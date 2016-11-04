@@ -32,3 +32,32 @@
     </div>
 
 </form>
+
+<script>
+    $('.form-horizontal').validate({
+        rules: {
+            roomnumber: {
+                required: true
+            }
+        },
+        messages: {
+            roomnumber: "Please enter a room number"
+        },
+        highlight: function() {
+            $('.formcontrol').addClass('has-error');
+        },
+        unhighlight: function() {
+            $('.form-control').removeClass('has-error');
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function(error, element) {
+            if(element.parent('.form-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        }
+    });
+
+</script>

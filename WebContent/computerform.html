@@ -100,3 +100,32 @@
         </div>
     </div>
 </form>
+
+<script>
+    $('.form-horizontal').validate({
+        rules: {
+            machinetype: {
+                required: true
+            }
+        },
+        messages: {
+            machinetype: "Please enter the type of computer"
+        },
+        highlight: function() {
+            $('.formcontrol').addClass('has-error');
+        },
+        unhighlight: function() {
+            $('.form-control').removeClass('has-error');
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function(error, element) {
+            if(element.parent('.form-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        }
+    });
+
+</script>
