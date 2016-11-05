@@ -13,7 +13,7 @@
         <div class="col-md-8 col-md-offset-2">
             <form class="form-inline searchForm">
                 <div class="input-group form-div-primary">
-                    <input id="searchID" name="search" type="text" class="form-control search-input" placeholder="Search for a resource here...">
+                    <input id="searchID" name="search" type="text" class="form-control search-input" placeholder="Search for a resource here..."/>
                 	<span class="input-group-btn">
 	                	<button type="submit" class="btn btn-primary search-btn">
 	                    	  &nbsp;<span class="glyphicon glyphicon-search"></span>&nbsp;
@@ -71,14 +71,14 @@ $('.searchForm').validate({
 		}
 	},
 	messages: {
-		search: "This cannot be blank, you must search for a resource."
+		search: "Query cannot be blank, you must search for a resource."
 	},
-	highlight: function() {
-		$(".form-div-primary").addClass("has-error");
+	highlight: function(element) {
+		$(element).closest(".form-div-primary").addClass("has-error");
 		$(".search-btn").addClass("btn-danger");
 	},
 	unhighlight: function() {
-		$(".form-div-primary").removeClass("has-error");
+		$(element).closest(".form-div-primary").removeClass("has-error");
 		$(".search-btn").removeClass("btn-danger");
 	},
 	errorElement: 'span',

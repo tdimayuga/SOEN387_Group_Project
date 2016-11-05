@@ -1,29 +1,74 @@
 <h3>Add Whiteboard</h3>
-<form class="form-horizontal" action="addboard.jsp" method="post">
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="width">Width:</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="number" id="width"/>
-        </div>
-    </div>
+<form id="boardForm" class="form-horizontal" method="post">
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="width">Width:</label>
+		<div class="col-sm-10">
+			<div class="input-group">
+				<input class="form-control" type="number" name="width" id="width" />
+			</div>
+		</div>
+	</div>
 
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="height">Height:</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="number" id="height"/>
-        </div>
-    </div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="height">Height:</label>
+		<div class="col-sm-10">
+			<div class="input-group">
+				<input class="form-control" type="number" name="height" id="height" />
+			</div>
+		</div>
+	</div>
 
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="roomnumber">Room Number:</label>
-        <div class="col-sm-10">
-            <input class="form-control" type="number" id="roomnumber"/>
-        </div>
-    </div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="roomnumber">Room
+			Number:</label>
+		<div class="col-sm-10">
+			<div class="input-group">
+				<input class="form-control" type="number" name="roomnumber"
+					id="roomnumber" />
+			</div>
+		</div>
+	</div>
 
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Submit</button>
-        </div>
-    </div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-default">Submit</button>
+		</div>
+	</div>
 </form>
+
+<script>
+    $('#boardForm').validate({
+        rules: {
+            width: {
+                required: true
+            },
+            height: {
+                required: true
+            },
+            roomnumber: {
+                required: true
+            }
+        },
+        messages: {
+            width: "Please enter a value for width",
+            height: "Please enter a value for height",
+            roomnumber: "Please enter a value for room number"
+        },
+        highlight: function(element) {
+            $(element).closest.('.form-group').addClass('has-error');
+        },
+        unhighlight: function() {
+        	$(element).closest.('.form-group').removeClass('has-error');
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function(error, element) {
+            if(element.parent('.input-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        }
+    });
+
+</script>
