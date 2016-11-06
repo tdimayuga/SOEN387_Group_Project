@@ -3,7 +3,11 @@
     Created on : Oct 30, 2016
     Author     : Venelin Koulaxazov
 --%>
-<form id="loginForm" class="form-horizontal" method="post">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<form id="loginForm" class="form-horizontal" action="<c:url value="/invLogin"/>" method="post">
 	<div class="form-group">
 		<label for="userType" class="cols-sm-2 control-label">Login as</label>
 		<div class="cols-sm-10">
