@@ -1,25 +1,25 @@
 <h3>Add Projector</h3>
 <form id="projectorForm" class="form-horizontal" method="post">
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="height"> Resolution
+		<label class="control-label col-sm-2" for="projectorHeight"> Resolution
 			Height:</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="number" id="height" />
+			<input class="form-control" type="number" name="projectorHeight" id="projectorHeight" />
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="width"> Resolution
+		<label class="control-label col-sm-2" for="projectorWidth"> Resolution
 			Width:</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="number" id="width" />
+			<input class="form-control" type="number" name="projectorWidth" id="projectorWidth" />
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="room"> Room Number:</label>
+		<label class="control-label col-sm-2" for="projectorRoomNumber"> Room Number:</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="number" id="room" />
+			<input class="form-control" type="number" name="projectorRoomNumber" id="projectorRoomNumber" />
 		</div>
 	</div>
 
@@ -63,16 +63,20 @@
 <script>
 	$('#projectorForm').validate({
 		rules : {
-			width : {
+			projectorWidth : {
 				required : true
 			},
-			height : {
+			projectorHeight : {
+				required : true
+			},
+			projectorRoomNumber : {
 				required : true
 			}
 		},
 		messages : {
-			width : "Please enter a value for width",
-			height : "Please enter a value for height"
+			projectorWidth : "Please enter a resolution width for the projector.",
+			projectorHeight : "Please enter a resolution height for the projector.",
+			projectorRoomNumber: "Please enter a room number for the projector."
 		},
 		highlight : function(element) {
 			$(element).closest('.form-group').addClass('has-error');
@@ -83,7 +87,7 @@
 		errorElement : 'span',
 		errorClass : 'help-block',
 		errorPlacement : function(error, element) {
-			if (element.parent('.input-group').length) {
+			if (element.parent('.form-group').length) {
 				error.insertAfter(element.parent());
 			} else {
 				error.insertAfter(element);

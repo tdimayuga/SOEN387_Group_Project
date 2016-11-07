@@ -2,40 +2,40 @@
 <form id="computerForm" class="form-horizontal" method="post">
 
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="machinetype">Machine
+		<label class="control-label col-sm-2" for="machineType">Machine
 			Type:</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="text" id="machinetype" />
+			<input class="form-control" type="text" name="machineType" id="machineType" />
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="hostname">Host
+		<label class="control-label col-sm-2" for="hostName">Host
 			Name:</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="text" id="hostname" />
+			<input class="form-control" type="text" name="hostName" id="hostName" />
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="operatingsystem">Operating
+		<label class="control-label col-sm-2" for="operatingSystem">Operating
 			System:</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="text" id="operatingsystem" />
+			<input class="form-control" type="text" name="operatingSystem" id="operatingSystem" />
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="manufacturer">Manufacturer:</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="text" id="manufacturer" />
+			<input class="form-control" type="text" name="manufacturer" id="manufacturer" />
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="model">Model:</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="text" id="model" />
+			<input class="form-control" type="text" name="model" id="model" />
 		</div>
 	</div>
 
@@ -121,12 +121,28 @@
 <script>
 	$('#computerForm').validate({
 		rules : {
-			machinetype : {
+			machineType : {
+				required : true
+			},
+			hostName : {
+				required : true
+			},
+			operatingSystem : {
+				required : true
+			},
+			manufacturer : {
+				required : true
+			},
+			model : {
 				required : true
 			}
 		},
 		messages : {
-			machinetype : "Please enter the type of computer"
+			machineType : "Please enter a type for computer.",
+			hostName : "Please enter a host name for the computer.",
+			operatingSystem : "Please enter an operating system for the computer.",
+			manufacturer : "Please enter a manufacturer for the computer.",
+			model : "Please enter a model for the computer."
 		},
 		highlight : function(element) {
 			$(element).closest('.form-group').addClass('has-error');
@@ -137,7 +153,7 @@
 		errorElement : 'span',
 		errorClass : 'help-block',
 		errorPlacement : function(error, element) {
-			if (element.parent('.input-group').length) {
+			if (element.parent('.form-group').length) {
 				error.insertAfter(element.parent());
 			} else {
 				error.insertAfter(element);
