@@ -3,7 +3,7 @@
     Created on : Oct 30, 2016
     Author     : Venelin Koulaxazov
 --%>
-<%@ page contentType="text/html" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
