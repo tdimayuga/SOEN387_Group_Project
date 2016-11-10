@@ -49,26 +49,22 @@ public class ResourcesController {
 	    }
 	 
 	 
-	 @RequestMapping(value = "/roomform, method=RequestMethod.Post", params = {"roomNumber", "roomBuilding", "roomCapacity"})
-		public String roomForm(@RequestParam int roomNumber,
-							   @RequestParam String roomBuilding,
-							   @RequestParam int roomCapacity)
-		{
-		 	resourcesService.addRoom(roomNumber, roomBuilding, roomCapacity);
+	 @RequestMapping(value = "/roomform", method=RequestMethod.POST, params = {"roomNumber", "roomBuilding", "roomCapacity"})
+		public String roomForm(@RequestParam int roomNumber, @RequestParam String roomBuilding, @RequestParam int roomCapacity){
+		 		
+		 		resourcesService.addRoom(roomNumber, roomBuilding, roomCapacity);
 			
-			// REDIRECT to output page
-			return "redirect:/index/";
+		 		// REDIRECT to output page
+		 		return "redirect:/index/";
 		}
 		
-		@RequestMapping(value = "/boardform, method=RequestMethod.Post", params = {"boardWidth", "boardHeight", "boardRoomNumber"})
-		public String roomForm(@RequestParam int boardWidth,
-							   @RequestParam int boardHeight,
-							   @RequestParam int boardRoomNumber)
-		{
-			resourcesService.addBoard(boardWidth, boardHeight, boardRoomNumber);
+		@RequestMapping(value = "/boardform", method=RequestMethod.POST, params = {"boardWidth", "boardHeight", "boardRoomNumber"})
+		public String roomForm(@RequestParam int boardWidth, @RequestParam int boardHeight, @RequestParam int boardRoomNumber){
+				
+				resourcesService.addBoard(boardWidth, boardHeight, boardRoomNumber);
 			
-			// REDIRECT to output page
-			return "redirect:/index/";
+				//REDIRECT to output page
+				return "redirect:/index/";
 		}
 	 
 	 
