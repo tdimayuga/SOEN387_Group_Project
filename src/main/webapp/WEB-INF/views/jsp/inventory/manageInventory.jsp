@@ -4,16 +4,16 @@
 	Date: October 30, 2016 - 1.0
  -->
 
-<%@include file="../../../../includes/navbar.jsp" %>
+<%@include file="includes/navbar.jsp" %>
 
 <div class="container">
     <div class="pageTitle"> <h2>Manage Inventory</h2></div> 
     
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <form class="form-inline searchForm">
+            <form class="form-inline searchForm" action="/searchInv">
                 <div class="input-group form-div-primary">
-                    <input id="searchID" name="search" type="text" class="form-control search-input" placeholder="Search for a resource here..."/>
+                    <input id="searchID" name="search" type="text" class="form-control search-input" placeholder="Search for a resource here...">
                 	<span class="input-group-btn">
 	                	<button type="submit" class="btn btn-primary search-btn">
 	                    	  &nbsp;<span class="glyphicon glyphicon-search"></span>&nbsp;
@@ -33,30 +33,32 @@
             <table class="table resources">
                 <th>Status</th>
                 <th>Item</th>
+                <th>Description</th>
+                <th>Moveable</th>
          		
                 <tr>
                     <td class="danger col-md-4">Taken</td>
                     <td class="danger col-md-8"><a href="editItem.jsp">Server Computer</a></td>
+                    <td class="danger col-md-8">Description</td>
+                    <td class="danger col-md-8" style="text-align:center"><span class="glyphicon glyphicon-ok"></span> </td>                    
                 </tr>
                 <tr>
-                    <td class="danger">Being Reserved</td>
-                    <td class="danger"><a href="editItem.jsp">Windows Laptop 1</a></td>
+                    <td class="col-md-4">Available</td>
+                    <td class="col-md-8"><a href="editItem.jsp">Server Computer</a></td>
+                    <td class="col-md-8">Description</td>
+                    <td class="col-md-8" style="text-align:center"><span class="glyphicon glyphicon-ok"></span> </td>                    
                 </tr>
                 <tr>
-                    <td class="success">Available</td>
-                    <td class="success"><a href="editItem.jsp">Windows Laptop 2</a></td>
+                    <td class="col-md-4">Available</td>
+                    <td class="col-md-8"><a href="editItem.jsp">Server Computer</a></td>
+                    <td class="col-md-8">Description</td>
+                    <td class="col-md-8" style="text-align:center"><span class="glyphicon glyphicon-remove"></span> </td>                    
                 </tr>
                 <tr>
-                    <td class="success">Available</td>
-                    <td class="success"><a href="editItem.jsp">Windows Laptop 3</a></td>
-                </tr>
-                <tr>
-                    <td class="danger">Being Reserved</td>
-                    <td class="danger"><a href="editItem.jsp">Windows Laptop 4</a></td>
-                </tr>
-                <tr>
-                    <td class="success">Available</td>
-                    <td class="success"><a href="editItem.jsp">Windows Laptop 5</a></td>
+                    <td class="danger col-md-4">Taken</td>
+                    <td class="danger col-md-8"><a href="editItem.jsp">Server Computer</a></td>
+                    <td class="danger col-md-8">Description</td>
+                    <td class="danger col-md-8" style="text-align:center"><span class="glyphicon glyphicon-remove"></span> </td>                    
                 </tr>
             </table>
         </div>
@@ -71,14 +73,14 @@ $('.searchForm').validate({
 		}
 	},
 	messages: {
-		search: "Query cannot be blank, you must search for a resource."
+		search: "This cannot be blank, you must search for a resource."
 	},
-	highlight: function(element) {
-		$(element).closest(".form-div-primary").addClass("has-error");
+	highlight: function() {
+		$(".form-div-primary").addClass("has-error");
 		$(".search-btn").addClass("btn-danger");
 	},
 	unhighlight: function() {
-		$(element).closest(".form-div-primary").removeClass("has-error");
+		$(".form-div-primary").removeClass("has-error");
 		$(".search-btn").removeClass("btn-danger");
 	},
 	errorElement: 'span',
@@ -93,4 +95,4 @@ $('.searchForm').validate({
 });
 </script>
 
-<%@include file="../../../../includes/footer.jsp" %>
+<%@include file="includes/footer.jsp" %>
