@@ -7,28 +7,38 @@
 
 	<div class="col-md-offset-2">
 		<br> <br>
-		<form id="editForm" class="editForm form-horizontal" method="post">
+		<form id="editForm" action="editItem.jsp" class="editForm form-horizontal" method="post">
 			<div class="form-group">
 				<label for="itemName" class="cols-sm-2 control-label">Name</label>
 				<div class="cols-sm-10">
 					<input type="text" class="form-control" id="itemName"
-						name="itemName" placeholder="Enter a Name">
+						name="name" placeholder="Enter a Name" value="<%= request.getParameter("name") %>">
 				</div>
 			</div>
-			<div class="form-group">
-				<label for="status" class="cols-sm-2 control-label">Status</label>
-				<div class="cols-sm-10">
-					<select class="form-control" name="status" id="status">
-						<option value="taken">Taken</option>
-						<option value="available">Available</option>
-					</select>
-				</div>
-			</div>
+			
 			<div class="form-group">
 				<label for="description" class="cols-sm-2 control-label">Description</label>
 				<div class="cols-sm-10">
 					<textarea class="form-control" name="description" id="description"
-						placeholder="Enter an Item Description" rows="3"></textarea>
+						placeholder="Enter an Item Description" rows="3" ><%= request.getParameter("description") %></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="availability" class="cols-sm-2 control-label">Availability</label>
+				<div class="cols-sm-10">
+					<select class="form-control" name="availability" id="availability" >
+						<option value="Y">Available</option>
+						<option value="N">Taken</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="moveable" class="cols-sm-2 control-label">Moveable</label>
+				<div class="cols-sm-10">
+					<select class="form-control" name="moveable" id="moveable">
+						<option value="Y">Yes</option>
+						<option value="N">No</option>
+					</select>
 				</div>
 			</div>
 			<div class="form-group">
