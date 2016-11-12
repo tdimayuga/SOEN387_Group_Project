@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.concordia.soen387.service.LoginService;
+import com.concordia.soen387.service.ResourcesService;
+
 /**
  * Created by Yang Shen on 2016-11-01.
  */
@@ -14,7 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes({"username" , "userType"})
 public class LoginController {
 	
-	
+	private LoginService loginService;
 
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String indexPage(){
@@ -27,10 +30,12 @@ public class LoginController {
                                         	@RequestParam String userType,
                                         		ModelMap model){
     	// validate user from database
-    	
+    	loginService.validateUser(username, password);
     	//store username and userType in the model to keep track of sessions
     	model.put("username", username);
     	model.put("userType", userType);
+    	
+    	// redirect to the proper jsp 
     	
     }
 

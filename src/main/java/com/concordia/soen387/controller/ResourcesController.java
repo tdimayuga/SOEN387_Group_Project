@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.concordia.soen387.service.ResourceService;
 import com.concordia.soen387.service.ResourcesService;
 
 /**
@@ -23,29 +22,33 @@ public class ResourcesController {
 	}
 	
 	 //change password
-	 @RequestMapping(value="/changePw", method=RequestMethod.POST, params = {"oldPassword", "newPassword", "confirmPassword"})
-	    public void changePassword(@RequestParam String oldPassword, @RequestParam String newPassword, @RequestParam String confirmPassword){
+	 @RequestMapping(value="/passForm", method=RequestMethod.POST, params = {"oldPassword", "newPassword", "confirmPassword"})
+	    public void passwordForm(@RequestParam String oldPassword, @RequestParam String newPassword, @RequestParam String confirmPassword){
 	    	
-		 
+		 		resourcesService.changePassword(oldPassword, newPassword, confirmPassword);
+		 		// redirect to proper jsp
 	    }
 	
 	 //add computer
-	 @RequestMapping(value="/addComp", method=RequestMethod.POST, params = {"machineType", "hostName" , "operatingSystem" , "manufactuerer", "model",
+	 @RequestMapping(value="/compForm", method=RequestMethod.POST, params = {"machineType", "hostName" , "operatingSystem" , "manufactuerer", "model",
 			"wirelessnetworking", "wirednetworking" , "speakersincluded", "keyboardincluded", "mouseincluded", "hdmiout" })
-	    public void addComputer(@RequestParam String machineType, @RequestParam String hostName, @RequestParam String operatingSystem,
+	    public void computerForm(@RequestParam String machineType, @RequestParam String hostName, @RequestParam String operatingSystem,
 	    		@RequestParam String manufacturer, @RequestParam String model, @RequestParam String wirelessnetworking, @RequestParam String wirednetworking,
 	    		@RequestParam String speakersincluded, @RequestParam String keyboardincluded, @RequestParam String mouseincluded, @RequestParam String hdmiout){
 	    	
-
+		 		resourcesService.addComputer(machineType, hostName, operatingSystem, manufacturer, model, wirelessnetworking, wirednetworking, speakersincluded, 
+	    			keyboardincluded, mouseincluded, hdmiout);
+		 		//redirect to proper jsp
 	    }
 	 
 	 //add projector
-	 @RequestMapping(value="/addProj", method=RequestMethod.POST, params = {"projectorHeight", "projectorWidth", "projectorRoomNumber", "hdmiin",
+	 @RequestMapping(value="/projForm", method=RequestMethod.POST, params = {"projectorHeight", "projectorWidth", "projectorRoomNumber", "hdmiin",
 			 																"dviin", "vgain" })
-	    public void addProjector(@RequestParam String projectorHeight, @RequestParam String projectorWidth, @RequestParam String projectorRoomNumber, @RequestParam String hdmiin,
+	    public void projectorForm(@RequestParam String projectorHeight, @RequestParam String projectorWidth, @RequestParam String projectorRoomNumber, @RequestParam String hdmiin,
 	    		@RequestParam String dviin, @RequestParam String vgain){
-	    	
-
+		 		
+		 		resourcesService.addProjector(projectorHeight, projectorWidth, projectorRoomNumber, hdmiin, dviin, vgain);
+		 		//redirect to proper jsp
 	    }
 	 
 	 
@@ -59,7 +62,7 @@ public class ResourcesController {
 		}
 		
 		@RequestMapping(value = "/boardform", method=RequestMethod.POST, params = {"boardWidth", "boardHeight", "boardRoomNumber"})
-		public String roomForm(@RequestParam int boardWidth, @RequestParam int boardHeight, @RequestParam int boardRoomNumber){
+		public String boardForm(@RequestParam int boardWidth, @RequestParam int boardHeight, @RequestParam int boardRoomNumber){
 				
 				resourcesService.addBoard(boardWidth, boardHeight, boardRoomNumber);
 			
@@ -70,10 +73,11 @@ public class ResourcesController {
 	 
 	 
 	 //edit item
-	 @RequestMapping(value="/changeItem", method=RequestMethod.POST, params = {"itemName", "status", "description"})
-	    public void editItem(@RequestParam String itemName, @RequestParam String status, @RequestParam String description){
+	 @RequestMapping(value="/editItem", method=RequestMethod.POST, params = {"itemName", "status", "description"})
+	    public void itemForm(@RequestParam String itemName, @RequestParam String status, @RequestParam String description){
 	    	
-
+		 		resourcesService.editItem(itemName, status, description);
+		 		//redirect to proper jsp
 	    }
 
 }
